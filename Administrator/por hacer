@@ -1,0 +1,60 @@
+User: hostdime
+pass:1q2w3e4r5t 
+
+ADMINISTRACION DEL SERVIDOR
+https://66.7.201.127:8443/login_up.php
+teksyste
+Teksystem@900710285
+
+
+por hacer:
+Validar Usuarios Doble Login
+Verificar en modificar referencia que guarde todo bien
+
+1. Grafica como la número 3: Compras de los últimos 3 meses contado vs crédito
+2. Ventas de los últimos tres meses
+
+puede ser con la gráfica en barras
+
+gráfica de ingresos en efectivo - trasferencias - tarjeta - otros en una torta
+Gráfica de cantidad de prendas hechas bajo pedido de cliente
+Gráfica de gastos
+
+puedes utilizar ese componente para las gráficas u otro que sea fácil de manipular
+
+Para la gráfica 1 de: 
+t_orden_compra_insumos campos 
+Cantidad_Solicitada*Costo_Insumo
+filtrada por el campo 
+Forma_Pago donde 
+1 es para contado y 
+2 para crédito
+
+filtrada por el campo Forma_Pago donde 1 es para contado y 2 para crédito
+
+Gráfica Ventas : t_ventas campos Cant_Solicitada*Valor_Final en esta se filtra por Tienda_Id_Tienda
+
+la idea sería cuánto se ha vendido en total y cuánto por tiendaEnviado en:
+sé si pones todas las gráficas en general y un link para que pueda ver por cada tienda
+dejamos 4 gráficas mejor 5
+una que muestre todo Modasof y una por cada tienda de Modasof
+
+
+porque si pongo un filtro o un link para seleccionar la tienda me toca devolverme 
+pa mirar la otra y otra y así sucesivamente, entonces no tengo el plano general de todo o me toca recordarlo
+
+entonces tenemos la sección ventas  y gastosque van por cada tienda y general
+otra sección que se llama producción
+esa sección llevaría gastos y compras
+ya tienes las tablas de ventas y de compras
+ya te digo de donde salen los gastos
+
+son 5 graficos por cada sección
+
+general y las 4 tiendas
+
+La de ingresos sale de la tabla t_ingresos campos sum(valor_ingreso) filtrado por tienda_id_tienda y 
+por medio_pagodonde 1 es contado 2. tarjeta 3. transferencia 4. otrosel 1, 2,3,4 son del campo medio_pago
+Esa no sé si en una torta con son 4 divisiones
+y todas con último mes y dos meses anteriores
+

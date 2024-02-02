@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="es">
+<head><meta charset="utf-8" />
+<title>Filtrar Elementos con jQuery</title>
+
+<script type='text/javascript' src='http://christian.sietemedia.com.mx/filtros/jquery-1.7.1.min.js'></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('ul.listado li a').click(function() {
+    var textoFiltro = $(this).text().toLowerCase().replace(/\s/g,"-");
+    if(textoFiltro == 'todos')
+    {
+        $('ul.filtros li.hidden').fadeIn('slow').removeClass('hidden');
+    }
+    else
+    {
+        $('ul.filtros li').each(function()
+        {
+            if(!$(this).hasClass(textoFiltro))
+            {
+                $(this).fadeOut('normal').addClass('hidden');
+            }
+            else
+            {
+                $(this).fadeIn('slow').removeClass('hidden');
+            }
+        });
+    }
+    return false;
+    });
+});
+</script>
+</head>
+<body>
+<section>
+<ul class="listado">
+    <li><a href="#">Todos</a></li>
+    <li><a href="#">Rojos</a></li>
+    <li><a href="#">Azules</a></li>
+    <li><a href="#">Amarillos</a></li>
+    </ul>
+    <ul class="filtros"> 
+        <li class="rojos">Rojos</li>
+        <li class="Azules">Azules</li>
+        <li class="Azules">Azules</li>
+        <li class="amarillos">amarillos</li>
+
+    </ul>
+   
+</section>
+</body>
+</html>
